@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'activerecord'
+#gem 'pg'
+gem 'rspec'
+gem 'faker'
+gem 'rake'
+#need this
 gem 'puma'
 #required for AWS
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

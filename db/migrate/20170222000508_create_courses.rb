@@ -3,7 +3,7 @@ class CreateCourses < ActiveRecord::Migration
     create_table :courses do |t|
       t.string   "class_name"
       t.string "start_time"
-      t.int "duration"
+      t.integer "duration"
       t.timestamps null: false
 
     end

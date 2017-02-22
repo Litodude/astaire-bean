@@ -30,6 +30,8 @@ end
 
 def update
 	@teacher = Teacher.find(params[:id])
+	@teacher.assign_attributes(teacher_params)
+	
 	if @teacher.save
 		message = 'Success! Your changes has been saved.'
 		redirect_to edit_teach_url(@teacher.id), :flash => {:success => message}
@@ -42,6 +44,8 @@ end
 
 def destroy
 	@teacher = Teacher.find(params[:id])
+	@teacher.destroy
+
 	respond_to do |f|
 		f.html { redirect_to teachers_url }
 		f.json { render :json => {} }

@@ -29,7 +29,7 @@ class TeachersController < ApplicationController
 		@teacher.assign_attributes(teacher_params)
 
 		if @teacher.save
-			message = 'Success! Your changes has been saved.'
+			message = 'Success! Your changes have been saved.'
 			redirect_to edit_teach_url(@teacher.id), :flash => {:success => message}
 		else
 			message = 'Please correct these errors: #{@teacher.errors.full_messages.join(', ')}'

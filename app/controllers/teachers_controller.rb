@@ -34,7 +34,7 @@ def update
 	
 	if @teacher.save
 		message = 'Success! Your changes has been saved.'
-		redirect_to edit_teach_url(@teacher.id), :flash => {:success => message}
+		redirect_to edit_teacher_url(@teacher.id), :flash => {:success => message}
 	else
 		message = 'Please correct these errors: #{@teacher.errors.full_messages.join(', ')}'
 		flash.now[:error] = message

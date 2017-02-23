@@ -1,8 +1,8 @@
 <%# in app/views/teachers/index %>
 
 <%#list all available teachers%>
-<% for @teachers.each do |f| %>
-	<%= f.teacher.full_name %>
+<% @teachers.each do |f| %>
+	<div><%= f.teacher.full_name %></div>
 <% end %>
 
 <%# add link to creating new teacher %>

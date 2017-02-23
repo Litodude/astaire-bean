@@ -7,6 +7,10 @@ class TeachersController < ApplicationController
 	def new
 		@teacher = Teacher.new
 	end
+	
+	def edit
+		@teacher = Teacher.find(params[:id])
+	end
 
 	def create
 		@teacher = Teacher.new(teacher_params)
@@ -18,10 +22,6 @@ class TeachersController < ApplicationController
 			flash.now[:error] = message
 			render 'teachers/new'
 		end
-	end
-
-	def edit
-		@teacher = Teacher.find(params[:id])
 	end
 
 	def update

@@ -23,25 +23,6 @@ class TeachersController < ApplicationController
 	def edit
 		@teacher = Teacher.find(params[:id])
 	end
-<<<<<<< HEAD
-end
-
-def edit
-	@teacher = Teacher.find(params[:id])
-end
-
-def update
-	@teacher = Teacher.find(params[:id])
-	@teacher.assign_attributes(teacher_params)
-	
-	if @teacher.save
-		message = 'Success! Your changes has been saved.'
-		redirect_to edit_teacher_url(@teacher.id), :flash => {:success => message}
-	else
-		message = 'Please correct these errors: #{@teacher.errors.full_messages.join(', ')}'
-		flash.now[:error] = message
-		render 'teachers/edit'
-=======
 
 	def update
 		@teacher = Teacher.find(params[:id])
@@ -55,7 +36,6 @@ def update
 			flash.now[:error] = message
 			render 'teachers/edit'
 		end
->>>>>>> 0c4a356399e02e4af1ef1a25ed0b673079fbb99c
 	end
 
 	def destroy

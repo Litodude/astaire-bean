@@ -25,7 +25,9 @@ class CoursesController < ApplicationController
 	end
 
 	def update
-		@course = Course.assign_attributes(course_params)
+		@course = Course.find(params[:id])
+		@course.assign_attributes(course_params)
+
 		if @course.save
 			message = 'Your changes have been saved.'
 			redirect_to edit_course_url(@course.id), :flash => {:success => message}
@@ -37,14 +39,16 @@ class CoursesController < ApplicationController
 	end
 
 	def destroy
-		@course = Course.destroy(params[:id])
+		@course = Course.find(params[:id])
+		@course.destroy
+
 		respond_to do |f|
 			f.html { redirect_to courses_url }
-			f.json {render :json => {} }
+			f.json { render :json => {} }
 		end
 	end
 
-
+	private
 	# add: teacher_id, duration, start_time, name
 	# remove: full_name
 	def course_params

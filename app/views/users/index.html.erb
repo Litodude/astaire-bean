@@ -1,0 +1,13 @@
+<%# %>
+<%# in app/views/teachers/index %>
+
+<%#list all available teachers%>
+<% @users.each do |f| %>
+	<div><%= f.user.full_name %></div>
+	<%# need to add something more significant to differentiate between students if similar names %>
+	<%# picture? age? %>
+
+<% end %>
+
+<%# add link to creating new teacher %>
+<%# add link to search existing teachers %>

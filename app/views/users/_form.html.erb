@@ -1,0 +1,24 @@
+<%# comment %>
+
+<%#user form%>
+
+<h1> New user information</h1>
+<%= form_for :user do |f| %>
+<%#probably still need to add :rul %>
+	<p>
+		<%= f.label :full_name %>
+		<%= f.text_field :full_name %>
+		<%= f.label :birth_date %>
+		<%= f.datetime :birth_date %>
+		<%= f.label :phone_number %>
+		<%= f.text_field :phone_number %>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+
+
+
+		<%= f.submit "Submit", f.disable_with "Submitting.." %>
+		<%# need to add button near the bottom for 'Accept T&C' and 'Accept PPolicy' that has a link as well that's aligned differently <%>
+
+		</p>
+	<% end %>

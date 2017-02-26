@@ -1,0 +1,18 @@
+<%# %>
+
+
+	<%= form_for :course do |f| %>
+
+		
+		<%= f.label :class_name %>
+		<%= f.text_field :class_name %>
+		<%= f.label :start_time %>
+		<%= f.text_field :start_time %>
+		<%= f.label :duration %>
+		<%= f.integer :duration %>
+
+		<%= f.submit "Submit", f.disable_with "Submitting.." %>
+
+
+	<% end %>
+		

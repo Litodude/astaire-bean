@@ -3,12 +3,12 @@
 <%# teacher_param %>
 
 <h1> Create new teacher </h1>
-<%= form_for :teacher do |f| %>
+<%= form_for @teacher  do |f| %>
 <%# how to add :url correctly? %>
 	<p>
 		<%= f.label :full_name %>
 		<%= f.text_field :full_name %>
-		<%= f.submit "Submit" , f.disable_with "Submitting.."%>
+		<%= f.submit "Submit" %>
 	</p>
 <% end %>
 

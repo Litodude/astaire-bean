@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(paramds([:id])
-		@user.assign_attributes(teacher_params)
+		@user.assign_attributes(user_params)
 
 		if @user.save
 			message = 'Success! Your changes have been saved.'
